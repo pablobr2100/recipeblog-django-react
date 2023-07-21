@@ -41,7 +41,10 @@ const Navbar = () => {
             <Typography
               variant="h4"
               color={'tomato'}
-              sx={{ fontFamily: "Splash, cursive" }}
+              sx={{
+                fontFamily: "Splash, cursive",
+                textAlign: { xs: "center", md: "left" }
+              }}
             >
               RecipeBlog
             </Typography>
@@ -94,17 +97,21 @@ const Navbar = () => {
           />
         </Drawer>
       </AppBar>
-      <Box sx={{  display: "flex", justifyContent: "center", 
-                  flexDirection:{ xs: "column", md: "row" } 
-              }}
+      <Box sx={{
+        display: "flex", 
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: { xs: "column", md: "row" },
+        padding: 1,
+      }}
       >
-        <Typography align="center" variant="h5" mr={{ xs:0, md:1 }}>
+        <Typography align="center" variant="h5" mr={{ xs: 0, md: 1 }}>
           Simple Recipes made for Coder!
         </Typography>
         <Typography
-          align="center" 
-          variant="h5" 
-          color={"tomato"} 
+          align="center"
+          variant="h5"
+          color={"tomato"}
           sx={{ fontFamily: "Splash, cursive" }}
         >
           Simple Recipes made for Coder!
