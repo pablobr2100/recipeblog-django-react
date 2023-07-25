@@ -37,10 +37,9 @@ const PostsCard = () => {
                 Best Burger
               </Typography>
               <Typography variant="h5" color="text.secondary">
-                O hambúrguer (do inglês hamburger), é um preparado de carne
-                temperada (principalmente de carne bovina, ocasionalmente de
-                frango moído, carne suína moída ou com misturas de carnes) e
-                moldada em formato circular.
+                A hamburger, or simply burger, is a food consisting of
+                fillings—usually a patty of ground meat, typically beef, placed
+                inside a sliced bun or bread roll.
               </Typography>
               <CardActions>
                 <Button sx={{ color: "tomato" }} size="large">
