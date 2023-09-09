@@ -8,12 +8,11 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
-import burger from "../../static/burger1.jpg";
 
-const PostsCard = ({ myDirection }) => {
+const PostsCard = ({ myDirection, title, excerpt, image, postLink }) => {
   return (
     <Box mt={3}>
-      <Link href="#" sx={{ textDecoration: "none" }}>
+      <Link href={postLink} sx={{ textDecoration: "none" }}>
         <Card>
           <Box
             sx={{
@@ -27,8 +26,8 @@ const PostsCard = ({ myDirection }) => {
           >
             <CardMedia
               component={"img"}
-              height="300"
-              image={burger}
+              height="300px"
+              image={image}
               alt="burger_image"
               sx={{
                 width: "400px",
@@ -41,14 +40,12 @@ const PostsCard = ({ myDirection }) => {
                 },
               }}
             />
-            <CardContent>
+            <CardContent sx={{ minHeight: "260px" }}>
               <Typography gutterBottom variant="h4" align="center">
-                Best Burger
+                {title}
               </Typography>
               <Typography variant="h5" color="text.secondary">
-                A hamburger, or simply burger, is a food consisting of
-                fillings—usually a patty of ground meat, typically beef, placed
-                inside a sliced bun or bread roll.
+                {excerpt}
               </Typography>
               <CardActions>
                 <Button sx={{ color: "tomato" }} size="large">

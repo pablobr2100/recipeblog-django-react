@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Box, Grid, Pagination, Stack, Typography } from "@mui/material";
 import PostsCard from "./PostsCard";
 
 const Posts = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/posts/`
+        );
+        setPosts(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <Box>
       <Typography variant="h4" align="center">
@@ -13,15 +31,16 @@ const Posts = () => {
         columnSpacing={{ xs: 0, sm: 1, md: 1 }}
         direction={"column"}
       >
-        <Grid item xs>
-          <PostsCard myDirection={"flex"} />
-        </Grid>
-        <Grid item xs>
-          <PostsCard myDirection={"flex"} />
-        </Grid>
-        <Grid item xs>
-          <PostsCard myDirection={"flex"} />
-        </Grid>
+        {posts.map((post) => (
+          <Grid item xs>
+            <PostsCard
+              title={post.title}
+              excerpt={post.excerpt}
+              image={post.image}
+              myDirection={"flex"}
+            />
+          </Grid>
+        ))}
       </Grid>
       <Typography
         variant="h4"
